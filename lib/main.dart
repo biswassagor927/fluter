@@ -1,42 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:liquid_swipe/liquid_swipe.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
-
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: ListView(
-          children: <Widget>[
-            ListTile(
-              title: Text("Easy Explanation"),
-              subtitle: Text("Learn everything with easy explanation"),
-              leading: CircleAvatar(child: Icon(Icons.message),),
-              trailing: Icon(Icons.add_a_photo),
+        body: Center(
+          child: Card(
+            elevation: 10,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(50)),
             ),
-                ListTile(
-              title: Text("Easy Explanation"),
-              subtitle: Text("Learn everything with easy explanation"),
-              leading: CircleAvatar(child: Icon(Icons.message),),
-              trailing: Icon(Icons.add_a_photo),
+            child: Container(
+              height: 200,
+              width: 200,
+      
             ),
-                ListTile(
-              title: Text("Easy Explanation"),
-              subtitle: Text("Learn everything with easy explanation"),
-              leading: CircleAvatar(child: Icon(Icons.message),),
-              trailing: Icon(Icons.add_a_photo),
-            ),
-                 ListTile(
-              title: Text("Easy Explanation"),
-              subtitle: Text("Learn everything with easy explanation"),
-              leading: CircleAvatar(child: Icon(Icons.message),),
-              trailing: Icon(Icons.add_a_photo),
-            ),
-          ],
+          ),
         ),
       ),
     );
