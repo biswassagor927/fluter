@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 
-class Page2 extends StatelessWidget {
-  const Page2({super.key});
+class SecondPage extends StatelessWidget {
+  const SecondPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue,
-      child: const Center(
-        child: Text(
-          'Page 2',
-          style: TextStyle(fontSize: 32, color: Colors.white),
-        ),
+    return Scaffold(
+      body: Center(
+        child: Container(
+          child: Hero(
+            tag: "add",
+            child: Icon(
+              Icons.add_a_photo,
+              size: 250,color: const Color.fromARGB(255, 21, 173, 7),
+              ),
+            ),
+          ),
+        
       ),
     );
   }
 }
-      

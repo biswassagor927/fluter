@@ -1,45 +1,43 @@
-import 'package:firstapp/page1.dart';
 import 'package:firstapp/page2.dart';
-import 'package:firstapp/page3.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
-
-  @override
-  State<MyApp> createState() => _MyAppState();
+void main() {
+  runApp(MyApp());
 }
 
-class _MyAppState extends State<MyApp> {
-  late PageController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = PageController(initialPage: 0);
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: PageView(
-          scrollDirection: Axis.vertical,
-          controller: _controller,
-          children: const <Widget>[
-            Page1(),
-            Page2(),
-            Page3(),
-          ],
+      home: Homepage(),
+    );
+  }
+}
+
+class Homepage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: CircleAvatar(
+            radius: 50,
+        child: GestureDetector(
+            child: Hero(
+              tag: "add",
+              child: Icon(
+                Icons.add_a_photo,
+                size: 50, color: Color.fromARGB(255, 146, 7, 116),
+              ),
+            ),
+            onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => 
+                    SecondPage(),
+                  ),
+                )
+          ),
         ),
       ),
     );
